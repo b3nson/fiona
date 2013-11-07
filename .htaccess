@@ -1,0 +1,39 @@
+HeaderName /jsdirls-sett/head.html
+ReadmeName /jsdirls-sett/foot.html
+
+
+IndexIgnore favicon.ico .x foot.html head.html robots.txt  
+
+
+#IndexOptions +NameWidth=* SuppressHTMLPreamble FancyIndexing VersionSort FoldersFirst
+
+IndexOptions +FancyIndexing
+IndexOptions +FoldersFirst +VersionSort +DescriptionWidth=* +NameWidth=*
+IndexOptions +SuppressHTMLPreamble -HTMLTable +XHTML +SuppressRules
+
+
+
+
+
+
+
+# ===== ICONS ====================================================================
+
+AddIconByType (IMG,http://www.hs-augsburg.de/~bs/.globals/icons/image2.png) image/*
+AddIconByType (SND,http://www.hs-augsburg.de/~bs/.globals/icons/sound2.png) audio/*
+AddIconByType (VID,http://www.hs-augsburg.de/~bs/.globals/icons/movie.png) video/*
+AddIcon http://www.hs-augsburg.de/~bs/.globals/icons/compressed.png .Z .z .tgz .gz .zip .rar .ace .tar
+AddIcon http://www.hs-augsburg.de/~bs/.globals/icons/html.png .html .shtml .htm
+AddIcon http://www.hs-augsburg.de/~bs/.globals/icons/pdf.png .pdf
+AddIcon http://www.hs-augsburg.de/~bs/.globals/icons/text.png .txt
+AddIcon http://www.hs-augsburg.de/~bs/.globals/icons/folder.png ^^DIRECTORY^^
+AddIcon (ICON,http://www.hs-augsburg.de/~bs/.globals/icons/back.png) ..
+DefaultIcon /icons/unknown.png
+
+AddDescription "PDF Document" .pdf
+AddDescription "Compressed Archive" .Z .z .tgz .gz .zip .rar .ace .tar
+AddDescription "HTML Document" .html .shtml .htm
+AddDescription "Plain/Text Document" .txt
+AddDescription "Image" .jpg .jpeg .gif .tiff .tif .bmp .pict .tga .png
+AddDescription "Video File" .mov .avi .asf .wma .divx .mpg .mpeg
+AddDescription "Audio File" .mp3 .wav .aiff .aif .mp2
