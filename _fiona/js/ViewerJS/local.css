@@ -1,0 +1,21 @@
+/* 160208 - benson
+ * overwriting some stuff
+ */
+
+
+div#canvasContainer {
+  background-color: #222;
+  top: 0px;
+}
+
+div#titlebar {
+  background-color: #222;
+  width: 100px;
+  right: 0px;
+  left: auto;
+}
+
+div#documentName {
+  color: #222;
+  display: none;
+}

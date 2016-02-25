@@ -1,0 +1,49 @@
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+ order allow,deny
+ deny from all
+</Files>
+
+
+<IfModule mod_autoindex.c>
+HeaderName /bs/fiona/_fiona/head.html
+ReadmeName /bs/fiona/_fiona/foot.html
+
+
+IndexIgnore favicon.ico foot.html head.html robots.txt _fiona *.note fiona.config
+
+
+#IndexOptions +NameWidth=* SuppressHTMLPreamble FancyIndexing VersionSort FoldersFirst
+
+IndexOptions +FancyIndexing
+IndexOptions +FoldersFirst +VersionSort +DescriptionWidth=* +NameWidth=*
+IndexOptions +SuppressHTMLPreamble -HTMLTable +XHTML +SuppressRules
+#IndexOptions IconsAreLinks
+
+</IfModule>
+
+
+
+
+# ===== ICONS ====================================================================
+
+#AddIconByEncoding http://localhost/bs/fiona/_fiona/icons/white/file-text.svg text/plain
+
+AddIconByType (IMG,http://localhost/bs/fiona/_fiona/icons/white/picture-o.svg) image/*
+AddIconByType (SND,http://localhost/bs/fiona/_fiona/icons/white/microphone.svg) audio/*
+AddIconByType (VID,http://localhost/bs/fiona/_fiona/icons/white/video-camera.svg) video/*
+AddIcon http://localhost/bs/fiona/_fiona/icons/white/zip.png .Z .z .tgz .gz .zip .rar .ace .tar
+AddIcon http://localhost/bs/fiona/_fiona/icons/white/code.svg .html .shtml .htm
+AddIcon http://localhost/bs/fiona/_fiona/icons/white/file-pdf-o.svg .pdf .odt .ods .doc
+AddIcon http://localhost/bs/fiona/_fiona/icons/white/file-text.svg .txt .js
+AddIcon http://localhost/bs/fiona/_fiona/icons/white/arrow-right.svg ^^DIRECTORY^^
+AddIcon (ICON,http://localhost/bs/fiona/_fiona/icons/white/arrow-left.svg) ..
+DefaultIcon http://localhost/bs/fiona/_fiona/icons/white/file.svg
+
+AddDescription "PDF Document" .pdf
+AddDescription "Compressed Archive" .Z .z .tgz .gz .zip .rar .ace .tar
+AddDescription "HTML Document" .html .shtml .htm
+AddDescription "Plain/Text Document" .txt .js
+AddDescription "Image" .jpg .jpeg .gif .tiff .tif .bmp .pict .tga .png
+AddDescription "Video File" .mov .avi .asf .wma .divx .mpg .mpeg .mp4 .mkv
+AddDescription "Audio File" .mp3 .wav .aiff .aif .mp2 .ogg
