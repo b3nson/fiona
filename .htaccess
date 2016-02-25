@@ -32,7 +32,7 @@ IndexOptions +SuppressHTMLPreamble -HTMLTable +XHTML +SuppressRules
 AddIconByType (IMG,http://localhost/bs/fiona/_fiona/icons/white/picture-o.svg) image/*
 AddIconByType (SND,http://localhost/bs/fiona/_fiona/icons/white/microphone.svg) audio/*
 AddIconByType (VID,http://localhost/bs/fiona/_fiona/icons/white/video-camera.svg) video/*
-AddIcon http://localhost/bs/fiona/_fiona/icons/white/zip.png .Z .z .tgz .gz .zip .rar .ace .tar
+AddIcon http://localhost/bs/fiona/_fiona/icons/white/file-archive-o.svg .Z .z .tgz .gz .zip .rar .ace .tar
 AddIcon http://localhost/bs/fiona/_fiona/icons/white/code.svg .html .shtml .htm
 AddIcon http://localhost/bs/fiona/_fiona/icons/white/file-pdf-o.svg .pdf .odt .ods .doc
 AddIcon http://localhost/bs/fiona/_fiona/icons/white/file-text.svg .txt .js

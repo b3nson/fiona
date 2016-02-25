@@ -1,0 +1,12 @@
+.DS_Store
+*.jpg
+*.pdf
+*.mp3
+*.mp4
+*.mov
+*.png
+*.gif
+*.txt
+*.swf
+*.webloc
+_fiona/icons/white_out/*.svg
