@@ -256,7 +256,7 @@
 		});
 
 		//remove sorting-table-headers
-		$('pre a:lt(4)').each(function() {
+		$('pre a:lt(3)').each(function() {
    			$(this).remove();
 		});
 
@@ -285,11 +285,11 @@
 
 			$linknode = $(this).children('.entrytitle').children('a');
 			$link = $linknode.attr('href');
-
+		
 			$(this).attr("id", $link);
 
 			var re_image = /.jpg|.gif|.png|.jpeg/;
-			var re_text = /.txt|.html|.css|.js/;
+			var re_text = /.txt|.html|.css|.js|.sh/;
 			var re_folder = '/';
 			var re_audio = /.mp3|.wav|.aif|.ogg/;
 			var re_video = /.mp4|.ogv|.webm|.avi/;
@@ -430,7 +430,8 @@
 	}
 	
 	function handleTypeDocument($linknode, $link, state) {
-		$node = $('<iframe src = "' +baseurl +'_fiona/js/ViewerJS/#' +url +$link  +'"  width="99%" height="400" allowfullscreen webkitallowfullscreen></iframe>');
+		//$node = $('<iframe src = "' +baseurl +'_fiona/js/ViewerJS/#' +url +$link  +'"  width="99%" height="400" allowfullscreen webkitallowfullscreen></iframe>');
+		$node = $('<iframe src = "/_fiona/js/ViewerJS/#' +url +$link  +'"  width="99%" height="400" allowfullscreen webkitallowfullscreen></iframe>');
 		$linknode.parent().parent().append($node);
 	}
 
