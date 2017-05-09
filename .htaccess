@@ -14,7 +14,7 @@ IndexIgnore favicon.ico foot.html head.html robots.txt _fiona *.note fiona.confi
 
 IndexOptions +FancyIndexing
 IndexOptions +FoldersFirst +VersionSort +DescriptionWidth=* +NameWidth=*
-IndexOptions +SuppressHTMLPreamble -HTMLTable +XHTML +SuppressRules
+IndexOptions +SuppressHTMLPreamble -HTMLTable +XHTML +SuppressRules +SuppressLastModified
 #IndexOptions IconsAreLinks
 
 </IfModule>
