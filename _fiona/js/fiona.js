@@ -1,5 +1,6 @@
 
 	//defaults
+	var fionatoggle = true;
 	var collapseAllOnDirectLink = false;
 	var uplink = true;
 	var searchable = true;
@@ -37,7 +38,7 @@
     	checkURL();
     	loadRules();
 
-		$('.button').click(function () {
+		$('.fionatoggle').click(function () {
 			if(expanded) {
 				resetListing();
 			} else { 
@@ -160,6 +161,7 @@
 		    	}
 		    }
 
+			assignConfigBool(config.general.showFionaToggle, "fionatoggle");
 			assignConfigBool(config.general.showParentLink, "uplink");
 			assignConfigBool(config.general.showSearch, "searchable");
 		    assignConfigBool(config.general.showItemBar, "showtitlebar");
@@ -233,7 +235,12 @@
 
 
     function processListing() {
-    	listing = $('pre').html();
+    	
+    	if(fionatoggle) {
+	    	listing = $('pre').html();
+	    } else {
+	    	$('button.fionatoggle').remove();
+	    }
 
 		//$('pre').attr('id', 'sortable');
 	 	$('pre').attr('id', 'search-list');
@@ -241,6 +248,7 @@
 		//insert navigation-div
 		$('pre').before('<div class="navigation"></div><hr class="nav" />');
 
+		//insert search field
 	 	if(searchable) {
 	 		$('.navigation').prepend('<input class="search" id="search-input" type="text" value="" placeholder="search">');
 	 	}

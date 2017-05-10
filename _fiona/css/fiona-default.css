@@ -30,8 +30,15 @@ a.anchor{
 }
 
 
-div.button {
-     background-color: #881299;  
+button.fionatoggle {
+    font-weight: bold;
+    margin: 4px;
+    padding: 4px;
+    display: inline-block;
+    background-color: #eee;
+    color: #111;
+    border: 0 none;
+    border-radius: 3px;
 }
 
 div.navigation {
