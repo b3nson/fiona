@@ -36,7 +36,7 @@ div.button {
 
 div.navigation {
      /*#background-color: #888888; */
-    padding: 15px 0px 10px 0px;
+    padding: 18px 0px 10px 0px;
 }
 
 
@@ -66,11 +66,10 @@ div.navigation > div.listentry > div.entrytitle > a:hover {
     color: #34CDFF;
     background: none;
 }
-div.navigation > div.listentry:first-of-type > div.entrytitle > a {
+div.navigation > div.listentry> div.entrytitle > a.backlink {    
      color: #888;    
      font-weight: normal;
 }
-
 div.navigation > div.listentry > div.entrytitle > img {
     margin: 0px 6px 5px 0px;
 }

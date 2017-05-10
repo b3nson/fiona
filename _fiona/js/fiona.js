@@ -1,6 +1,7 @@
 
 	//defaults
 	var collapseAllOnDirectLink = false;
+	var uplink = true;
 	var searchable = true;
 	var shownotes = true;
 	var showtitlebar = true;
@@ -159,6 +160,7 @@
 		    	}
 		    }
 
+			assignConfigBool(config.general.showParentLink, "uplink");
 			assignConfigBool(config.general.showSearch, "searchable");
 		    assignConfigBool(config.general.showItemBar, "showtitlebar");
 		    assignConfigBool(config.general.showItemNotes, "shownotes");
@@ -242,6 +244,14 @@
 	 	if(searchable) {
 	 		$('.navigation').prepend('<input class="search" id="search-input" type="text" value="" placeholder="search">');
 	 	}
+
+		//remove "ParentDirectory"-Link
+		if(!uplink) {
+			$('pre img[alt="[PARENTDIR]"] + a').remove();
+			$('pre img[alt="[PARENTDIR]"]').remove();
+		} else {
+			$('pre img[alt="[PARENTDIR]"] + a').attr("class", "backlink");
+		}
 
 		//wrap all textnodes inside pre
 		$('pre').contents().filter(function() {
