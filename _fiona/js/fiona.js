@@ -23,6 +23,7 @@
 	var MD  = 6;
 	
 	var listing;
+	var subdirs = false;
 	var dynLoadedFiles = "";
 	var videocount = 0;
 	var audio = [];
@@ -246,7 +247,7 @@
 	 	$('pre').attr('id', 'search-list');
 
 		//insert navigation-div
-		$('pre').before('<div class="navigation"></div><hr class="nav" />');
+		$('pre').before('<div class="navigation"></div>');
 
 		//insert search field
 	 	if(searchable) {
@@ -291,6 +292,11 @@
 
 	 	expanded = true;
 	 	handleContent();
+
+		//insert hr
+		if(searchable || uplink || subdirs) {
+			$('pre').before('<hr class="nav" />');
+		}
 	}
 
 
@@ -306,7 +312,7 @@
 		
 			$(this).attr("id", $link);
 
-			var re_image = /.jpg|.gif|.png|.jpeg/;
+			var re_image = /.jpg|.gif|.png|.jpeg|.JPG/;
 			var re_text = /.txt|.html|.css|.js|.sh/;
 			var re_folder = '/';
 			var re_audio = /.mp3|.wav|.aif|.ogg/;
@@ -403,6 +409,7 @@
 	  if($linknode.html() == "Parent Directory") {
 	  	$linknode.html("..");
 	  }
+	  subdirs = true;
 	  $('div.navigation').append($linknode.parent().parent());
 
 	}
