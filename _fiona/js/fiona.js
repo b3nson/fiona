@@ -457,7 +457,7 @@
 	
 	function handleTypeDocument($linknode, $link, state) {
 		//$node = $('<iframe src = "' +baseurl +'_fiona/js/ViewerJS/#' +url +$link  +'"  width="99%" height="400" allowfullscreen webkitallowfullscreen></iframe>');
-		$node = $('<iframe src = "/_fiona/js/ViewerJS/#' +url +$link  +'"  width="99%" height="400" allowfullscreen webkitallowfullscreen></iframe>');
+		$node = $('<iframe src = "/.globals/fiona/js/ViewerJS/#' +url +$link  +'"  width="99%" height="400" allowfullscreen webkitallowfullscreen></iframe>');
 		$linknode.parent().parent().append($node);
 	}
 
@@ -487,7 +487,7 @@
 	}
 
 	function initSearch() {
-		$('#search-list').liveFilter('#search-input', 'div', {
+		$('#search-list').liveFilter('#search-input', 'div.listentry', {
 		  filterChildSelector: 'a:first()',  
 		  	filter: function(el, val){
 		             return $(el).text().toUpperCase().indexOf(val.toUpperCase()) >= 0;
