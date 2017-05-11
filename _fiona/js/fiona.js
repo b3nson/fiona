@@ -249,18 +249,18 @@
 		//insert navigation-div
 		$('pre').before('<div class="navigation"></div>');
 
+		//remove sorting-table-headers
+		$('pre a:lt(3)').each(function() {
+   			$(this).remove();
+		});
+
+		//remove blank.gif
+		$('pre img:first-of-type').remove();
+
 		//insert search field
 	 	if(searchable) {
 	 		$('.navigation').prepend('<input class="search" id="search-input" type="text" value="" placeholder="search">');
 	 	}
-
-		//remove "ParentDirectory"-Link
-		if(!uplink) {
-			$('pre img[alt="[PARENTDIR]"] + a').remove();
-			$('pre img[alt="[PARENTDIR]"]').remove();
-		} else {
-			$('pre img[alt="[PARENTDIR]"] + a').attr("class", "backlink");
-		}
 
 		//wrap all textnodes inside pre
 		$('pre').contents().filter(function() {
@@ -269,14 +269,9 @@
 
 		//trim and remove "empty" text-nodes
 		$('pre div.metainfo').each(function() {
-			if( $(this).html().trim() == '') {
+			if( $(this).html().trim() == '' ) {
 				$(this).remove();
 			}
-		});
-
-		//remove sorting-table-headers
-		$('pre a:lt(3)').each(function() {
-   			$(this).remove();
 		});
 
 		//wrap listentries (icon, a and metatext)
@@ -407,9 +402,15 @@
 	function handleTypeFolder($linknode, $link) {
 	  removeMetainfo($linknode);
 	  if($linknode.html() == "Parent Directory") {
-	  	$linknode.html("..");
+	  	if(uplink) {
+	  		$linknode.html("..");
+	  		$linknode.attr("class", "backlink");
+	  	} else {
+	  		$linknode.remove();
+	  	}
+	  } else {
+	  	subdirs = true;
 	  }
-	  subdirs = true;
 	  $('div.navigation').append($linknode.parent().parent());
 
 	}
